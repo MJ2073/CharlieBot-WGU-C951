@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml>
+    
+  <category>
+    
+    <pattern>*</pattern>
+    
+    <template>
+        <message>I am Charlie, the computer science career advice chatbot.</message>
+        <message>I can help you find a computer science career that matches your interests.</message>
+        <message>Are you a computer science student?</message>
+        
+    <!--CS student question response buttons-->    
+        <button>
+          <text>Yes</text>
+          <postback>IS A CS STUDENT</postback>
+        </button>
+        
+        <button>
+          <text>No</text>
+          <postback>NOT A CS STUDENT</postback>
+        </button>
+         
+    </template>
+  </category>
+  
+  <!--NOT A CS STUDENT-->
+  <category>
+      <pattern>NOT A CS STUDENT </pattern>
+      <template>I am not the right career bot for you. Your school career counselor can steer you toward an appropriate career selector.</template>
+  </category>
+  
+  <!--CS STUDENT-->
+  <category>
+      <pattern>IS A CS STUDENT</pattern>
+      <template>
+          <message>You are in the right place!</message>
+          <message>I will ask you a few questions now. If you want to end, at any time, type "Exit"</message>
+          <message>Would you enjoy primarily writing code?</message>
+          
+            <!--buttons for coding question response-->
+            <button>
+                <text>Yes, I would love to mostly write code for a living.</text>
+                <postback>ENJOYS CODING</postback>
+            </button>
+            <button>
+                <text>No, I prefer not to write code.</text>
+                <postback>DISLIKES CODING</postback>
+            </button>
+      </template>
+  </category>
+  
+  <!--ENOYS CODING-->
+  <category>
+      
+      <pattern>ENJOYS CODING</pattern>
+      <template>
+          <message>Wonderful! You like writing code.</message>
+          <message>Do you prefer to write original code or do you like solving problems with existing code?</message>
+          
+          <!--software dev button-->
+          <button>
+              <text>I love to create original computer programs.</text>
+              <postback>SOFTWARE DEV</postback>
+          </button>
+          
+          <!--software QA button-->
+          <button>
+              <text>I enjoy the challenge of troubleshooting existing code.</text>
+              <postback>SOFTWARE QA</postback>
+          </button>
+      </template>
+  </category>
+  
+  
+  
+  <!--DISLIKES CODING-->
+  <category>
+      <pattern>DISLIKES CODING</pattern>
+      <template>
+        <message>You would prefer not to primarily write code.</message>  
+        <message>Next question:</message>
+        <message>Do you enjoy mathematics and statistics?</message>
+        
+            <!--YES MATH BUTTON-->
+            <button>
+                <text>Yes, I would enjoy a CS career with a  mathematics and statistics focus.</text>
+                <postback>YES MATH</postback>
+            </button>
+            
+            <!--NO MATH BUTTON-->
+            <button>
+                <text>No, I would rather not have a career with a significant math and statistics focus. </text>
+                <postback>NO MATH</postback>
+            </button>
+          
+      </template>
+  </category>
+  
+    <!--YES MATH response question-->
+    <category>
+        <pattern>YES MATH</pattern>
+        <template>
+        <message>So, you enjoy mathematics and statistics.</message>
+        <message>One last question:</message>
+        <message>Would you enjoy working a job that focuses on managing money?</message>
+        
+            
+        <!--Yes Money Button-->
+        <button>
+            <text>Yes, show me the money (so I can help manage it!) </text>
+            <postback>YES MONEY</postback>
+        </button>
+        
+        <!--No Money Button-->
+        <button>
+            <text>No, I would rather not work with money.</text>
+            <postback>NO MONEY</postback>
+        </button>
+        
+        </template>
+    </category>
+    
+    
+    <!--software QA button response-->
+    <category>
+        <pattern>SOFTWARE QA</pattern>
+        <template>You enjoy troubleshooting existing code. You could be a software quality assurance engineer.
+        <button>
+            <text>Software Quality Engineering career information</text>
+            <url>https://www.wvu.edu/academics/careers/software-quality-assurance-engineers-and-testers</url>
+        </button>
+        </template>
+    </category>
+    
+    <!--software dev button response-->
+    <category>
+      <pattern>SOFTWARE DEV</pattern>
+      <template>You like writing original code. You could be a Software Developer.
+      <button>
+          <text>Software Developer career information</text>
+          <url>https://www.bls.gov/ooh/computer-and-information-technology/software-developers.htm#tab-1</url>
+      </button>
+      </template>
+    </category>
+  
+    <!--NO MATH BUTTON RESPONSE-->
+    <category>
+        <pattern>NO MATH</pattern>
+        <template>You would prefer a career in CS without a strong programming or mathematics focus. 
+        You could be an IT Project Manager.
+        <button>
+            <text>Information about IT Project Management careers</text>
+            <url>https://www.techtarget.com/searchcio/definition/IT-project-manager</url>
+        </button>
+        </template>
+    </category>
+    
+    <!--YES MONEY BUTTON RESPONSE-->
+    <category>
+        <pattern>YES MONEY</pattern>
+        <template>You would like to work with money. Consider a career in Fintech(financial technology). 
+        <button>
+            <text>Informaiton on Fintech careers</text>
+            <url>https://www.forbes.com/advisor/banking/what-is-fintech/</url>
+        </button>
+        </template>
+    </category>
+    
+    <!--NO MONEY BUTTON RESPONSE-->
+    <category>
+        <pattern>NO MONEY</pattern>
+        <template>You do not want to work with money but enjoy mathematics. Consider a career
+        in Data Science.
+        <button>
+            <text>Inforation about Data Science careers</text>
+            <url>https://www.discoverdatascience.org/career-information/</url>
+        </button>
+        
+        </template>
+    </category>
+    
+    
+  <!--Exit-->
+  <category>
+      <pattern>EXIT</pattern>
+      <template>Thank you for chatting with me. Good luck in your career!</template>
+  </category>
+  
+</aiml>
